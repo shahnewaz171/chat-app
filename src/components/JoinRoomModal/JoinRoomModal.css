@@ -1,0 +1,33 @@
+/* Responsiveness */
+
+@media only screen and (max-width: 767px) {
+    .createRoom-modal .modal-details {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .createRoom-modal .modal-details {
+        width: 60%;
+        height: 45vh !important;
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.createRoom-modal h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 1.6rem;
+    font-weight: 700;
+}
+
+.ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+}

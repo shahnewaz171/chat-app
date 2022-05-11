@@ -5,6 +5,7 @@ import { modalStyle } from '../Shared/CustomStyles';
 import { DataContext } from '../../App';
 import { Socket } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
+import './JoinRoomModal.css';
 
 const JoinRoomModal = ({ openModal, setOpenModal, room, setRoom }) => {
     const { socket } = useContext(DataContext);
@@ -28,6 +29,7 @@ const JoinRoomModal = ({ openModal, setOpenModal, room, setRoom }) => {
         <>
             <Modal
                 isOpen={openModal}
+                onRequestClose={() => setOpenModal(false)}
                 contentLabel="Example Modal"
                 className="createRoom-modal"
             >
