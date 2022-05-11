@@ -1,15 +1,15 @@
 /* Responsiveness */
 
 @media only screen and (max-width: 767px) {
-    .createRoom-modal .css-1wnsr1i {
-        width: 78%;
+    .createRoom-modal .modal-details {
+        width: 95%;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .createRoom-modal .css-1wnsr1i {
+    .createRoom-modal .modal-details {
         width: 60%;
-        height: 95vh !important;
+        height: 45vh !important;
     }
 }
 
@@ -19,16 +19,6 @@
     right: 0;
     margin: 10px;
     cursor: pointer;
-}
-
-.createRoom-modal .css-1wnsr1i {
-    /* width: 50% ; */
-    padding: 14px 32px;
-    overflow-y: auto;
-    height: 80vh;
-    border-color: #182F59;
-    border-right: none;
-    /* border-radius: 5px; */
 }
 
 .createRoom-modal h2 {
@@ -41,4 +31,15 @@
 
 .ReactModal__Overlay {
     background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* footer */
+.footer-card{
+    padding: .5rem .5rem;
+}
+footer{
+    text-align: center;
+    background-color: rgb(114, 114, 114);
+    color: rgb(243, 241, 241);
+    padding: 10px 10px;
 }

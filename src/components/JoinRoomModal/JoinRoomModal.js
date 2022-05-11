@@ -31,7 +31,7 @@ const JoinRoomModal = ({ openModal, setOpenModal, room, setRoom }) => {
                 contentLabel="Example Modal"
                 className="createRoom-modal"
             >
-                <div style={modalStyle}>
+                <div className='modal-details' style={modalStyle}>
                     <h2 style={{ marginTop: '15px' }}>Create Room</h2>
                     <p className='close-btn' onClick={() => setOpenModal(false)}>
                         <GiCancel />

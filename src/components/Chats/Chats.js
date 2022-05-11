@@ -9,6 +9,7 @@ import moment from 'moment';
 import JoinRoomModal from '../JoinRoomModal/JoinRoomModal';
 import './Chats.css';
 import { ROOT_CSS } from '../Shared/CustomStyles';
+import Footer from '../Shared/Footer/Footer';
 
 const Chats = () => {
     const { socket } = useContext(DataContext);
@@ -61,7 +62,7 @@ const Chats = () => {
     }
 
     return (
-        <section style={{ backgroundColor: '#eee' }}>
+        <section style={{ backgroundColor: '#eee', minHeight: '100vh' }}>
             <div className="container py-5">
 
                 <div className="row d-flex justify-content-center">
@@ -129,6 +130,9 @@ const Chats = () => {
 
             {
                 <JoinRoomModal openModal={openModal} setOpenModal={setOpenModal} room={room} setRoom={setRoom} />
+            }
+            {
+                <Footer />
             }
         </section>
     );
