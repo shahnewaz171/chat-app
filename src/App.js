@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { createContext } from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import io from 'socket.io-client';
+import Chats from './components/Chats/Chats';
+
+export const DataContext = createContext();
+const socket = io.connect('https://still-cove-60578.herokuapp.com');
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <BrowserRouter>
+        <DataContext.Provider
+          value={{
+            socket
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Routes>
+            <Route path="/" element={<Chats />}>
+              <Route path="room/:roomID" element={<Chats />} />
+            </Route>
+          </Routes>
+        </DataContext.Provider>
+      </BrowserRouter>
+    </>
   );
 }
 
