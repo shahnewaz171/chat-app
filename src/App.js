@@ -1,21 +1,20 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import io from 'socket.io-client';
-import Chats from './components/Chats/Chats';
+import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import io from "socket.io-client";
+import Chats from "./components/Chats/Chats";
 
 export const DataContext = createContext();
-const socket = io.connect('https://still-cove-60578.herokuapp.com');
+const socket = io.connect("https://chat-app-backend-delta.vercel.app");
 
-function App() {
-
+const App = () => {
   return (
     <>
       <BrowserRouter>
         <DataContext.Provider
           value={{
-            socket
+            socket,
           }}
         >
           <Routes>
@@ -27,6 +26,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
